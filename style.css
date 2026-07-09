@@ -632,6 +632,92 @@ a {
   text-align: center;
 }
 
+.options-panel {
+  padding: 32px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.92);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px 40px;
+}
+
+.option-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px dashed var(--line);
+}
+
+.option-name {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.option-price {
+  flex: 0 0 auto;
+  font-weight: 800;
+  color: var(--blue);
+  white-space: nowrap;
+}
+
+.reassurance-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+}
+
+.reassurance-item h3 {
+  font-size: 1.05rem;
+}
+
+.reassurance-item p {
+  margin: 0;
+  font-size: 0.94rem;
+}
+
+.formule-panel {
+  display: grid;
+  gap: 14px;
+  padding: 40px;
+}
+
+.formule-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px;
+  margin: 4px 0 0;
+}
+
+.formule-price strong {
+  font-size: 2.1rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.formule-price span {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+}
+
+.formule-panel .button {
+  justify-self: start;
+}
+
+.spotlight-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 24px;
+}
+
 [data-reveal] {
   opacity: 0;
   transform: translateY(22px);
@@ -651,7 +737,8 @@ a {
   .cards-grid,
   .about-grid,
   .legal-grid,
-  .pricing-grid {
+  .pricing-grid,
+  .options-grid {
     grid-template-columns: 1fr;
   }
 
@@ -724,7 +811,8 @@ a {
   .panel-card,
   .info-card,
   .spotlight-box,
-  .footer-card {
+  .footer-card,
+  .options-panel {
     padding: 22px;
   }
 
