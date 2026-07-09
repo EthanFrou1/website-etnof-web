@@ -33,6 +33,12 @@
       type: "multi",
       choices: [
         { id: "blog", label: "Blog", price: 250 },
+        {
+          id: "backoffice",
+          label: "Back-office / CMS",
+          desc: "Gérez vous-même vos textes, photos et contenus",
+          price: 450,
+        },
         { id: "multilingue", label: "Multilingue", price: 250 },
         { id: "rdv", label: "Prise de rendez-vous", price: 290 },
         { id: "stripe", label: "Paiement Stripe", price: 350 },
