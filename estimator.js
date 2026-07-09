@@ -187,22 +187,38 @@
       cardsHtml +
       "</div>";
 
-    contentEl.querySelectorAll(".estimator-choice").forEach((btn) => {
+    const choiceButtons = contentEl.querySelectorAll(".estimator-choice");
+    choiceButtons.forEach((btn) => {
       btn.addEventListener("click", () => {
         const id = btn.getAttribute("data-choice");
         if (isMulti) {
           const pos = answers.options.indexOf(id);
-          if (pos > -1) {
-            answers.options.splice(pos, 1);
-          } else {
+          const nowSelected = pos === -1;
+          if (nowSelected) {
             answers.options.push(id);
+          } else {
+            answers.options.splice(pos, 1);
           }
+          btn.classList.toggle("is-selected", nowSelected);
+          btn.setAttribute("aria-pressed", String(nowSelected));
         } else {
           answers[step.id] = id;
+          choiceButtons.forEach((otherBtn) => {
+            const isSelected = otherBtn === btn;
+            otherBtn.classList.toggle("is-selected", isSelected);
+            otherBtn.setAttribute("aria-pressed", String(isSelected));
+          });
         }
-        renderStep();
+        updateNextButtonState();
       });
     });
+  }
+
+  function updateNextButtonState() {
+    if (stepIndex >= STEPS.length) return;
+    const step = STEPS[stepIndex];
+    const canProceed = step.type === "multi" || Boolean(answers[step.id]);
+    nextBtn.disabled = !canProceed;
   }
 
   function renderResultStep() {
@@ -295,13 +311,12 @@
     nextBtn.hidden = isResult;
 
     if (!isResult) {
-      const step = STEPS[stepIndex];
-      const canProceed = step.type === "multi" || Boolean(answers[step.id]);
-      nextBtn.disabled = !canProceed;
+      updateNextButtonState();
       nextBtn.textContent = stepIndex === STEPS.length - 1 ? "Voir mon estimation" : "Suivant";
     }
 
-    contentEl.focus();
+    modalBox.scrollTop = 0;
+    contentEl.focus({ preventScroll: true });
   }
 
   function resetEstimator() {
@@ -344,7 +359,7 @@
     overlay.hidden = false;
     document.body.style.overflow = "hidden";
     resetEstimator();
-    modalBox.focus();
+    modalBox.focus({ preventScroll: true });
     document.addEventListener("keydown", handleKeydown);
   }
 
