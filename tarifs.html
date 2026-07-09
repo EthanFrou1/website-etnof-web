@@ -67,6 +67,20 @@
           </div>
         </section>
 
+        <section class="estimator-banner" data-reveal>
+          <div class="estimator-banner-copy">
+            <p class="eyebrow">Estimation instantanée</p>
+            <h2>Une idée du prix en moins d'une minute.</h2>
+            <p>
+              Répondez à quelques questions sur votre projet pour obtenir une estimation
+              indicative, avant même de nous contacter.
+            </p>
+          </div>
+          <button type="button" class="button button-primary" id="estimator-open">
+            Tester ma configuration
+          </button>
+        </section>
+
         <section class="pricing-grid">
           <article class="pricing-card" data-reveal>
             <h3>Essentiel</h3>
@@ -394,6 +408,31 @@
       </main>
     </div>
 
+    <div class="modal-overlay" id="estimator-overlay" hidden>
+      <div
+        class="modal-box"
+        id="estimator-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Simulateur de tarif"
+        tabindex="-1"
+      >
+        <button type="button" class="modal-close" id="estimator-close" aria-label="Fermer la simulation">
+          &times;
+        </button>
+
+        <div class="modal-progress" id="estimator-progress" aria-hidden="true"></div>
+
+        <div class="modal-content" id="estimator-content" tabindex="-1" aria-live="polite"></div>
+
+        <div class="modal-actions">
+          <button type="button" class="button button-secondary" id="estimator-back">Précédent</button>
+          <button type="button" class="button button-primary" id="estimator-next">Suivant</button>
+        </div>
+      </div>
+    </div>
+
     <script src="script.js"></script>
+    <script src="estimator.js"></script>
   </body>
 </html>
