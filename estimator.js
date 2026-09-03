@@ -306,6 +306,10 @@
       '<div class="estimator-result-actions">' +
       '<a class="button button-primary" href="' +
       mailtoHref +
+      '" data-track="estimator_completed" data-track-formule="' +
+      (typeChoice ? typeChoice.id : "") +
+      '" data-track-total="' +
+      total +
       '">Demander un devis gratuit</a>' +
       '<button type="button" class="button button-secondary" id="estimator-restart">Recommencer</button>' +
       "</div>";

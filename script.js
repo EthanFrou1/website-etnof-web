@@ -22,6 +22,22 @@ if (menuToggle && header) {
   });
 }
 
+document.addEventListener("click", (event) => {
+  const target = event.target.closest("[data-track]");
+  if (!target || typeof window.umami === "undefined") return;
+
+  const eventName = target.getAttribute("data-track");
+  const props = {};
+  for (const attr of target.attributes) {
+    if (attr.name.startsWith("data-track-")) {
+      const key = attr.name.slice("data-track-".length).replace(/-/g, "_");
+      props[key] = attr.value;
+    }
+  }
+
+  window.umami.track(eventName, props);
+});
+
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(
     (entries) => {
