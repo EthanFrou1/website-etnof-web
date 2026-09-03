@@ -100,6 +100,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Umami Analytics -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="c953f7dc-0572-47bf-be9c-69dccf98b3ff"></script>
   </head>
   <body>
     <div class="page-shell">
@@ -132,7 +135,7 @@
           <a href="#fideliteproplus">Fidelite Pro Plus</a>
           <a href="tarifs.html">Tarifs</a>
           <a href="#apropos">À propos</a>
-          <a href="#contact">Contact</a>
+          <a href="#contact" data-track="contact_cta_clicked" data-track-label="nav_contact_anchor">Contact</a>
         </nav>
       </header>
 
@@ -147,12 +150,23 @@
               entreprises à développer leur présence en ligne.
             </p>
             <div class="hero-actions">
-              <a class="button button-primary" href="#contact">Parler du projet</a>
+              <a
+                class="button button-primary"
+                href="#contact"
+                data-track="contact_cta_clicked"
+                data-track-label="parler_du_projet"
+                data-track-location="hero"
+              >
+                Parler du projet
+              </a>
               <a
                 class="button button-secondary"
                 href="https://app.fideliteproplus.com/"
                 target="_blank"
                 rel="noreferrer"
+                data-track="portfolio_link_clicked"
+                data-track-project="fideliteproplus"
+                data-track-location="hero"
               >
                 Voir Fidelite Pro Plus
               </a>
@@ -243,7 +257,14 @@
               Une solution conçue pour aider un commerçant à fidéliser sa clientèle sans passer par
               des cartes papier ou un système complexe à maintenir.
             </p>
-            <a href="https://app.fideliteproplus.com/" target="_blank" rel="noreferrer">
+            <a
+              href="https://app.fideliteproplus.com/"
+              target="_blank"
+              rel="noreferrer"
+              data-track="portfolio_link_clicked"
+              data-track-project="fideliteproplus"
+              data-track-location="spotlight"
+            >
               Accéder à l’application
             </a>
           </div>
@@ -295,8 +316,8 @@
           </p>
           <div class="contact-list">
             <p><strong>Nom :</strong> Ethan Frou</p>
-            <p><strong>Email :</strong> <a href="mailto:etnofweb@gmail.com">etnofweb@gmail.com</a></p>
-            <p><strong>Téléphone / WhatsApp :</strong> <a href="tel:0638855704">06 38 85 57 04</a></p>
+            <p><strong>Email :</strong> <a href="mailto:etnofweb@gmail.com" data-track="contact_cta_clicked" data-track-label="email_direct">etnofweb@gmail.com</a></p>
+            <p><strong>Téléphone / WhatsApp :</strong> <a href="tel:0638855704" data-track="contact_cta_clicked" data-track-label="tel_direct">06 38 85 57 04</a></p>
             <p><strong>Localisation :</strong> Perpignan</p>
           </div>
           <div class="footer-actions">
@@ -306,6 +327,9 @@
               href="https://portfolio-ethan-2025.vercel.app/"
               target="_blank"
               rel="noreferrer"
+              data-track="portfolio_link_clicked"
+              data-track-project="portfolio-ethan"
+              data-track-location="footer"
             >
               Voir le portfolio
             </a>
@@ -314,6 +338,9 @@
               href="https://app.fideliteproplus.com/"
               target="_blank"
               rel="noreferrer"
+              data-track="portfolio_link_clicked"
+              data-track-project="fideliteproplus"
+              data-track-location="footer"
             >
               Ouvrir Fidelite Pro Plus
             </a>

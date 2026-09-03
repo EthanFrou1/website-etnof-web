@@ -17,6 +17,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+
+    <!-- Umami Analytics -->
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="c953f7dc-0572-47bf-be9c-69dccf98b3ff"></script>
   </head>
   <body>
     <div class="page-shell legal-shell">
@@ -50,7 +53,7 @@
 
         <nav class="site-nav legal-nav" id="site-nav" aria-label="Navigation">
           <a href="index.html">Accueil</a>
-          <a href="mailto:etnofweb@gmail.com">Contact</a>
+          <a href="mailto:etnofweb@gmail.com" data-track="contact_cta_clicked" data-track-label="nav_contact">Contact</a>
         </nav>
       </header>
 
@@ -68,12 +71,17 @@
             <a
               class="button button-primary"
               href="mailto:etnofweb@gmail.com?subject=Demande%20de%20devis%20gratuit"
+              data-track="devis_cta_clicked"
+              data-track-location="hero"
             >
               Demander un devis gratuit
             </a>
             <a
               class="button button-secondary"
               href="mailto:etnofweb@gmail.com?subject=Discuter%20de%20mon%20projet"
+              data-track="contact_cta_clicked"
+              data-track-label="discuter_du_projet"
+              data-track-location="hero"
             >
               Discuter de mon projet
             </a>
@@ -89,7 +97,12 @@
               indicative, avant même de nous contacter.
             </p>
           </div>
-          <button type="button" class="button button-primary" id="estimator-open">
+          <button
+            type="button"
+            class="button button-primary"
+            id="estimator-open"
+            data-track="estimator_opened"
+          >
             Tester ma configuration
           </button>
         </section>
@@ -119,6 +132,9 @@
             <a
               class="button button-secondary"
               href="mailto:etnofweb@gmail.com?subject=Projet%20-%20Formule%20Essentiel"
+              data-track="contact_cta_clicked"
+              data-track-label="parler_du_projet"
+              data-track-formule="essentiel"
             >
               Parler du projet
             </a>
@@ -150,6 +166,9 @@
             <a
               class="button button-secondary"
               href="mailto:etnofweb@gmail.com?subject=Projet%20-%20Formule%20Business"
+              data-track="contact_cta_clicked"
+              data-track-label="parler_du_projet"
+              data-track-formule="business"
             >
               Parler du projet
             </a>
@@ -182,6 +201,9 @@
             <a
               class="button button-secondary"
               href="mailto:etnofweb@gmail.com?subject=Projet%20-%20Formule%20Sur-mesure"
+              data-track="contact_cta_clicked"
+              data-track-label="parler_du_projet"
+              data-track-formule="sur-mesure"
             >
               Parler du projet
             </a>
@@ -332,6 +354,8 @@
               <a
                 class="button button-secondary"
                 href="mailto:etnofweb@gmail.com?subject=Maintenance%20-%20Essentielle"
+                data-track="maintenance_cta_clicked"
+                data-track-formule="essentielle"
               >
                 Choisir ce forfait
               </a>
@@ -354,6 +378,8 @@
               <a
                 class="button button-secondary"
                 href="mailto:etnofweb@gmail.com?subject=Maintenance%20-%20Business"
+                data-track="maintenance_cta_clicked"
+                data-track-formule="business"
               >
                 Choisir ce forfait
               </a>
@@ -377,6 +403,8 @@
               <a
                 class="button button-secondary"
                 href="mailto:etnofweb@gmail.com?subject=Maintenance%20-%20Premium"
+                data-track="maintenance_cta_clicked"
+                data-track-formule="premium"
               >
                 Choisir ce forfait
               </a>
@@ -430,6 +458,8 @@
             <a
               class="button button-secondary"
               href="mailto:etnofweb@gmail.com?subject=Formule%20Lancement"
+              data-track="maintenance_cta_clicked"
+              data-track-formule="lancement"
             >
               Choisir la Formule Lancement
             </a>
@@ -446,12 +476,17 @@
             <a
               class="button button-primary"
               href="mailto:etnofweb@gmail.com?subject=Demande%20de%20devis%20gratuit"
+              data-track="devis_cta_clicked"
+              data-track-location="footer"
             >
               Demander un devis gratuit
             </a>
             <a
               class="button button-secondary"
               href="mailto:etnofweb@gmail.com?subject=Discuter%20de%20mon%20projet"
+              data-track="contact_cta_clicked"
+              data-track-label="discuter_du_projet"
+              data-track-location="footer"
             >
               Discuter de mon projet
             </a>
