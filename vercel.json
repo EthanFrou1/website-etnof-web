@@ -1,0 +1,16 @@
+{
+  "headers": [
+    {
+      "source": "/(.*)\\.(css|js)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=604800, must-revalidate" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(png|webp|jpg|jpeg|gif|svg|ico)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=604800, must-revalidate" }
+      ]
+    }
+  ]
+}
